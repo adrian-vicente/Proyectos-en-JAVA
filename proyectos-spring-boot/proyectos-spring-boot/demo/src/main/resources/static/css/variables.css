@@ -1,0 +1,13 @@
+/* Importar fuente de google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Estilos globales */
+
+:root {
+    --fuente-principal: 'Roboto';
+}
+
+* {
+    font-family: 'Roboto';
+}

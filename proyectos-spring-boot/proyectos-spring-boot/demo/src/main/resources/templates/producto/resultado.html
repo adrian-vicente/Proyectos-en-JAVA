@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD05 - AVV - SPRING BOOT</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/variables.css}">
+</head>
+<body>
+
+    <!-- Header --->
+    <header>
+        <h1>Aplicaciones Web con Spring Boot</h1>
+        <h4>Prueba de métodos de la teoría</h4>
+    </header>
+
+    <!-- Main -->
+
+    <div th:object="${producto}">
+        <p>Nombre del producto: <span th:text="*{nombre}"></span></p>
+        <p>Categoría del producto: <span th:text="*{categoria}"></span></p>
+        <p>Precio del producto: <span th:text="*{precio}"></span>€</p>
+    </div>
+
+    <p>La información mostrada anteriormente es todo lo qué el usuario ha enviado por el formulario.</p>
+
+    <!-- Footer -->
+
+</body>
+</html>

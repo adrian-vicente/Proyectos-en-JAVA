@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD05 - AVV - SPRING BOOT</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/variables.css}">
+</head>
+<body>
+
+    <!-- Header -->
+     
+    <header>
+        <h1>Aplicaciones Web con Spring Boot</h1>
+        <h4>Prueba de métodos de la teoría</h4>
+    </header>
+
+    <!-- Contenido principal -->
+
+    <form th:action="@{/producto/form}" th:object="${product_form}" method="post">
+        <label for="">Introduce tu nombre:</label>
+        <input th:field="*{nombre}" th:placeholder="${product_form.NOMBRE_PH}">
+        <label for="">Introduce la categoría:</label>
+        <input th:field="*{categoria}" th:placeholder="${product_form.CATEGORIA_PH}">
+        <label>Introduce el precio:</label>
+        <input th:field="*{precio}" th:placeholder="${product_form.PRECIO_PH}">
+        <button type="submit">Enviar el formulario</button>
+    </form>
+
+    <!-- Footer de la página -->
+
+</body>
+</html>
