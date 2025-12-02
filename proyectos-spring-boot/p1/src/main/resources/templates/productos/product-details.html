@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVV - Product Details</title>
+    <link rel="stylesheet" th:href="@{/style/variables/variables.css}">
+    <link rel="stylesheet" th:href="@{/style/global/global.css}">
+</head>
+<body>
+    <header th:replace="~{fragments/fragment-header :: cabecera}"></header>
+    <div th:if="${producto != null}">
+        <p>Mostrando información detallada para el producto: <span th:text="${producto.nombre}"></span></p>
+        <ul>
+            <li>Material: <span th:text="${producto.material}"></span></li>
+            <li>Precio <span th:text="${producto.precio}"></span>€</li>
+        </ul>
+    </div>
+</body>
+</html>

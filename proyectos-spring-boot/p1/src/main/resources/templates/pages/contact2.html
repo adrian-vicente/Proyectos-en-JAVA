@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVV - Contact 2</title>
+    <link rel="stylesheet" th:href="@{/style/variables/variables.css}">
+    <link rel="stylesheet" th:href="@{/style/global/global.css}">
+    <link rel="stylesheet" th:href="@{/style/general/form.css}">
+</head>
+<body>
+    <header th:replace="~{fragments/fragment-header :: cabecera}"></header>
+    <main>
+        <p>Página contact2.html realizada a partir de un formulario dinámico.</p>
+        <form th:action="@{/contact2}" method="post" th:object="${form}">
+            <div th:each="campo : ${formulario}">
+                <label th:text="${campo.label}"></label>
+                <input th:type="${campo.type}" th:name="${campo.name}" th:placeholder="${campo.placeholder}">
+            </div>
+            <button type="submit">Enviar formulario</button>
+        </form>
+    </main>
+</body>
+</html>

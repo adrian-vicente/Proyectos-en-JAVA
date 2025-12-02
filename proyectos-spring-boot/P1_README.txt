@@ -1,0 +1,1 @@
+Proyecto web realizado con Spring Boot uso de Thymeleaf para las vistas. Es un pequeño proyecto web con formularios, formularios y rutas dinámicas.

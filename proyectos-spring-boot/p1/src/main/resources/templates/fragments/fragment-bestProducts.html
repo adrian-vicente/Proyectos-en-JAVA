@@ -1,0 +1,6 @@
+<div th:fragment="bestProducts">
+    <p>Mostrando la lista de productos destacados obtenidos de forma aleatoria:</p>
+    <ul>
+        <li th:each="producto : ${lista}"><span th:text="${producto.toString}"></span> <a th:href="@{/product/{id}(id=${producto.id})}">Ver detalles</a></li>
+    </ul>
+</div>
