@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVV - CONTACT FORM</title>
+</head>
+<body>
+    <main>
+        <p>Formulario de contacto generado de forma dinámica: </p>
+        <form th:action="@{/contacto}" th:object="${fc}" method="post">
+            <div th:each="elem : ${lista}">
+                <label th:text="${elem.label}"></label>
+                <input th:name=${elem.name} th:type="${elem.type}">
+            </div>
+            <button type="submit">Enviar el formulario</button>
+        </form>
+    </main>
+</body>
+</html>
