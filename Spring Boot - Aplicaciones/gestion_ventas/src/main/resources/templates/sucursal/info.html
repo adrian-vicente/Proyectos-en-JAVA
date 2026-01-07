@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVV - Info de Sucursal</title>
+</head>
+<body>
+    <header th:replace="~{fragments/header :: header}"></header>
+    <div th:if="${sucursal == null}">
+        <p>No se puede mostrar informacion de la sucursal. No existe en la base de datos.</p>
+    </div>
+    <div th:if="${sucursal != null}">
+        <p>Mostrando informacion para la sucursal con identificador: <span th:text="${sucursal.getId()}"></span></p>
+        <ul>
+            <li th:text="|Nombre de la sucursal: ${sucursal.getNombre()}|"></li>
+            <li th:text="|Direccion de la sucursal: ${sucursal.getDireccion()}|"></li>
+        </ul>
+        <div th:if="${listado_ventas.size() <= 0}">
+            <p>No se pueden mostrar las ventas de la sucursal. No hay ninguna registrada.</p>
+        </div>
+        <div th:if="${listado_ventas.size() >= 1}">
+            <p>Para la sucursal indicada se han encontrado en la base de datos: <span th:text="${listado_ventas.size()}"></span></p>
+            <ul>
+                <li th:each="venta : ${listado_ventas}" th:text="${venta.toString()}"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

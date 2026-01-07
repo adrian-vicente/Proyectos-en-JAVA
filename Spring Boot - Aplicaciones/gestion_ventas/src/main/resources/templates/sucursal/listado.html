@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVV - Listado de Sucursales</title>
+</head>
+<body>
+    <header th:replace="~{fragments/header :: header}"></header>
+    <div th:if="${listado == null || listado.isEmpty()}">
+        <p>No se puede mostrar ninguna sucursal. No existe ninguna.</p>
+    </div>
+    <div th:if="${listado.size() >= 1}">
+        <p>Mostrando el listado de sucursales a continuación: </p>
+        <ul>
+            <li th:each="sucursal : ${listado}"><span th:text="${sucursal.toString}"></span></li>
+        </ul>
+    </div>
+</body>
+</html>
